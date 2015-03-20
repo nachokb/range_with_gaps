@@ -32,14 +32,14 @@ spec = Gem::Specification.new do |s|
 end
 
 begin
-  require 'rake/gempackagetask'
+  require 'rubygems/package_task'
 rescue LoadError
   task(:gem) { $stderr.puts '`gem install rake` to package gems' }
 else
-  Rake::GemPackageTask.new(spec) do |pkg|
-    pkg.gem_spec = spec
-  end
-  task :gem => :gemspec
+#  Rake::GemPackageTask.new(spec) do |pkg|
+#    pkg.gem_spec = spec
+#  end
+#  task :gem => :gemspec
 end
 
 desc "create a gemspec file"
